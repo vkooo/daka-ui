@@ -35,7 +35,7 @@
                 <el-table-column type="selection"></el-table-column>
                 <el-table-column label="名称" prop="name" />
                 <el-table-column label="价格（元）" prop="price" />
-                <el-table-column label="折扣（%）" prop="discount" />
+                <el-table-column label="下级返佣比例（%）" prop="discount" />
                 <el-table-column prop="status" label="状态" width="100">
                     <template slot-scope="scope">
                         <el-tag :type="scope.row.status == 1 ? '' : 'success'">{{ scope.row.status == 1 ? '正常' : "禁用" }}</el-tag>
@@ -65,7 +65,7 @@
                     <el-form-item label="价格" prop="price">
                         <el-input-number v-model="form.price" :min="0" :precision="2" :step="0.1"/>
                     </el-form-item>
-                    <el-form-item label="折扣" prop="discount">
+                    <el-form-item label="下级返佣比例" prop="discount">
                         <el-input type="number" v-model="form.discount">
                             <template slot="append">%</template>
                         </el-input>
@@ -116,7 +116,7 @@ export default {
                     { required: true, message: '代理价格不能为空', trigger: 'change' }
                 ],
                 discount: [
-                    { required: true, message: '代理折扣不能为空', trigger: 'change' }
+                    { required: true, message: '下级返佣比例不能为空', trigger: 'change' }
                 ],
                 status: [
                     { required: true, message: '请选择状态', trigger: 'change' }
