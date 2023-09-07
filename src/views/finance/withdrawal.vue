@@ -164,8 +164,7 @@
         this.dialogVisible = true
       },
       pageChange(page){
-        this.queryData()
-        this.page = page
+        this.query.page = page
         this.getList();
       },
       rest:function (){
