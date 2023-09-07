@@ -2,6 +2,12 @@
     <div class="app-container">
       <el-card class="show">
         <el-form inline :model="query" ref="queryForm" class="demo-form-inline" v-if="showSearch">
+            <el-form-item label="用户 ID">
+              <el-input v-model="query.member_id" ></el-input>
+            </el-form-item>
+            <el-form-item label="邮箱">
+              <el-input v-model="query.keyword" ></el-input>
+            </el-form-item>
             <el-form-item label="时间">
                 <el-date-picker
                     v-model="query.date"
@@ -18,16 +24,6 @@
             </el-form-item>
         </el-form>
         <el-row :gutter="10" class="mb8">
-          <el-col :span="1.5">
-            <el-button
-              type="warning"
-              plain
-              icon="el-icon-download"
-              size="mini"
-              @click="handleExport"
-              v-auth="['member:export']"
-            >导出</el-button>
-          </el-col>
           <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
         </el-row>
   
@@ -89,6 +85,7 @@
       queryData(){
         this.query = {
             keyword: "",
+            member_id: "",
             status: "",
             date: "",
             page: 1,
@@ -107,15 +104,14 @@
         })
       },
       search(){
-        this.query.page = page
+        this.query.page = 1
         this.getList();
       },
       handleExport:function (){
   
       },
       pageChange(page){
-        this.queryData()
-        this.page = page
+        this.query.page = page
         this.getList();
       },
       rest:function (){

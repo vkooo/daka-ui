@@ -78,24 +78,32 @@
               type="selection"
             ></el-table-column>
             <el-table-column
+              label="真实姓名"
+              prop="realname"
+            />
+            <el-table-column
               label="ID"
               prop="id"
-            >
-            </el-table-column>
+            />
             <el-table-column
               label="邮箱"
               prop="email"
-            >
-            </el-table-column>
-            <el-table-column
-              label="注册方式"
-              prop="platform_text"
-            >
-            </el-table-column>
+            />
             <el-table-column
               label="代理"
               prop="agent.name"
+            />
+            <el-table-column
+              label="余额"
+              prop="money"
+            />
+            <el-table-column
+              label="公众号"
+              prop="wechat"
             >
+             <template slot-scope="scope">
+                    <el-tag :type="scope.row.wechat?'':'success'">{{ scope.row.wechat == 1?'已关注':"未关注" }}</el-tag>
+                </template>
             </el-table-column>
             <el-table-column prop="status" label="状态" width="100">
                 <template slot-scope="scope">

@@ -288,8 +288,7 @@ export default {
             this.form.menu_ids = $data.getCheckedKeys().concat($data.getHalfCheckedKeys());
         },
         pageChange(page){
-            this.queryData()
-            this.page = page
+            this.page.page = page
             this.getList();
         },
         submit() {

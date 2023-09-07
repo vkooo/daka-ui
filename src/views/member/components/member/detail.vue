@@ -56,6 +56,32 @@
                 </li>
               </div>
             </div>
+            <div class="vk-section" v-if="form.zxjy">
+              <div class="title">职校家园</div>
+              <div class="list">
+                <li class="item">
+                  <div>账号：</div>
+                  <div>{{ form.zxjy.account }}</div>
+                </li>
+                <li class="item">
+                  <div>密码：</div>
+                  <div>{{ form.zxjy.password }}</div>
+                </li>
+              </div>
+            </div>
+            <div class="vk-section" v-if="form.gxy">
+              <div class="title">工学云</div>
+              <div class="list">
+                <li class="item">
+                  <div>账号：</div>
+                  <div>{{ form.gxy.account }}</div>
+                </li>
+                <li class="item">
+                  <div>密码：</div>
+                  <div>{{ form.gxy.password }}</div>
+                </li>
+              </div>
+            </div>
           </el-tab-pane>
           <el-tab-pane label="服务列表" v-if="form.service">
             <div class="vk-section">

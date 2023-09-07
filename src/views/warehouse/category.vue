@@ -150,8 +150,7 @@ export default {
             this.getList();
         },
         pageChange(page){
-            this.queryData()
-            this.page = page
+            this.query.page = page
             this.getList();
         },
         add: function () {
@@ -204,8 +203,7 @@ export default {
             })
         },
         pageChange(page){
-            this.queryData()
-            this.page = page
+            this.query.page = page
             this.getList();
         },
         rest: function () {
