@@ -10,6 +10,12 @@
             <el-form-item label="禁止IP" prop="forbiddenip">
                 <el-input v-model="form.forbiddenip" autocomplete="off"></el-input>
             </el-form-item>
+            <el-form-item label="代理池" prop="forbiddenip">
+                <el-switch
+                    v-model="form.proxy"
+                    >
+                </el-switch>
+            </el-form-item>
             <el-form-item label="LOGO" prop="logo">
                 <div @click="$refs.pictureRef.dialogVisible = true">
                     <el-image 
